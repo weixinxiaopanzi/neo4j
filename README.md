@@ -19,7 +19,7 @@ http://localhost:7474 默认跳转到 http://localhost:7474/browser
 (参考: https://www.cnblogs.com/ljhdo/archive/2017/05/19/5521577.html) 
 
 Maven: (配置)
-	\<parent>
+	 &lt;parent&gt;
 		\<groupId>org.springframework.boot\</groupId>
 		\<artifactId>spring-boot-starter-parent\</artifactId>
 		\<version>1.4.2.RELEASE\</version>
