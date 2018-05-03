@@ -1,4 +1,6 @@
-<pre>Neo4j使用说明
+<pre>
+Neo4j使用说明
+
 1.环境准备: 依赖Java的JVM虚拟机
 java -version
 
@@ -20,10 +22,10 @@ http://localhost:7474 默认跳转到 http://localhost:7474/browser
 
 Maven: (配置)
 	 &lt;parent&gt;
-		\<groupId>org.springframework.boot\</groupId>
-		\<artifactId>spring-boot-starter-parent\</artifactId>
-		\<version>1.4.2.RELEASE\</version>
-	\</parent>
+		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+		&lt;version&gt;1.4.2.RELEASE&lt;/version&gt;
+	&lt;/parent&gt;
 
 配置: 
 	spring.data.neo4j.username=neo4j 数据库账号
@@ -89,10 +91,10 @@ private String name;
 private String refId; 
 /** 
 * 关系是有方向性的 
-* 图形数据库中显示为:A --recommend--> this 
+* 图形数据库中显示为:A --recommend--&gt; this 
 */ 
 @Relationship(type="recommend", direction = Relationship.OUTGOING) 
-private Set<Employee> employees; 
+private Set&lt;Employee&gt; employees; 
 
 /** 
 * 推荐 
@@ -100,7 +102,7 @@ private Set<Employee> employees;
 */ 
 public void ref(Employee e) { 
 	if(null == employees) { 
-		employees = new HashSet<>(); 
+		employees = new HashSet&lt;&gt;(); 
 	} 
 	employees.add(e); 
 } 
@@ -116,7 +118,7 @@ public void ref(Employee e) {
 
 
 @Repository 
-public interface EmployeeRepository extends GraphRepository<Employee>{ 
+public interface EmployeeRepository extends GraphRepository&lt;Employee&gt;{ 
 	/** 
 	* 实现自己的接口,通过名称查询 
 	* spring-data-neo4j支持方法命名约定查询方法 findBy{Employee的属性名} 
@@ -127,7 +129,7 @@ public interface EmployeeRepository extends GraphRepository<Employee>{
 	Employee findByMid(String mid); 
 } 
 
-其中: 定义一个接口继承GraphRepository<T> 
+其中: 定义一个接口继承GraphRepository&lt;T&gt; 
 
 即可使用neo4j的api. 此接口相当于mybatis的mapper.java文件, 但是有一个@Repository注解. 
 
