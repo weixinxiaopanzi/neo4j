@@ -18,13 +18,12 @@ http://localhost:7474 默认跳转到 http://localhost:7474/browser
 默认密码：neo4j
 (参考: https://www.cnblogs.com/ljhdo/archive/2017/05/19/5521577.html) 
 
-Maven: 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
-	</parent> 
-
+Maven: (配置)
+	\<parent>
+		\<groupId>org.springframework.boot\</groupId>
+		\<artifactId>spring-boot-starter-parent\</artifactId>
+		\<version>1.4.2.RELEASE\</version>
+	\</parent>
 
 配置: 
 	spring.data.neo4j.username=neo4j 数据库账号
